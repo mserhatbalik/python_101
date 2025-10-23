@@ -10,7 +10,7 @@ print(user_input)
 first_name = "  serhat"
 last_name = "balık      "
 
-# Updating the variables
+# Updating the variables by reassigning new values to the same variables
 first_name = first_name.strip().title()
 last_name = last_name.strip().title()
 print(first_name)
