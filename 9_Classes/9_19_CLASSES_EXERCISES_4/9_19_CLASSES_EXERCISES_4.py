@@ -14,7 +14,10 @@ Make a Restaurant instance, and call one of Restaurant’s methods to show that 
 Create a separate file, make an Admin instance, and call show_privileges() to show that everything is working correctly.
 """
 
-
+# import user as us
+# user_1 = us.Admin("serhat", "balık", "serb@hotmail.com", "m", "40")
+# user_1.describe_user()
+# user_1.privileges.show_privileges()
 
 
 
@@ -22,3 +25,9 @@ Create a separate file, make an Admin instance, and call show_privileges() to sh
 9-12. Multiple Modules: Store the User class in one module, and store the Privileges and Admin classes in a separate module. 
 In a separate file, create an Admin instance and call show_privileges() to show that everything is still working correctly.
 """
+
+# import admin
+#
+# user_1 = admin.Admin("serhat", "balık", "serb@hotmail.com", "m", "40")
+# user_1.greet_user()
+# user_1.privileges.show_privileges()
