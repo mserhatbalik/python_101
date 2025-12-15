@@ -1,0 +1,6 @@
+In Python you can use variables to store various and play with various information
+In Python you can use lists, tuples, and dictionaries to store multiple information in containers
+In Python you can use for and while loops to do iterative operations
+In Python you can use input method to create interactive programs which allows user input to be used in operations
+In Python you can use functions to create mini programs for a very specific tasks, and use them in our programs.
+In Python you can use classes and objects to create more structure in our programs
