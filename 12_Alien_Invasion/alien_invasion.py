@@ -1,0 +1,33 @@
+import sys
+import pygame
+
+
+class AlienInvasion:
+    """Overall class to manage game assets and behavior"""
+
+    def __init__(self):
+        pygame.init()
+
+        # Returns a "Surface Object" with 1200x800 dimensions and assigns it to the "screen" property. We will work with this property later.s
+        self.screen = pygame.display.set_mode((1200, 800))
+        pygame.display.set_caption("Alien Invasion")
+
+    def run_game(self):
+        """Start the main loop for the game."""
+        while True:
+            # Watch for keyboard and mouse events
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    sys.exit()
+
+            # Make the most recently drawn screen visible.
+            pygame.display.flip()
+
+
+if __name__ == '__main__':
+    # Make a game instance and run the game.
+    ai = AlienInvasion()
+    ai.run_game()
+
+# TODO
+# Controlling the Frame Rate
