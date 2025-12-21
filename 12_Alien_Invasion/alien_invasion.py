@@ -1,15 +1,19 @@
 import sys
 import pygame
-
+from settings import Settings
 
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
 
     def __init__(self):
         pygame.init()
+        self.clock = pygame.time.Clock()
+        self.settings = Settings()
 
-        # Returns a "Surface Object" with 1200x800 dimensions and assigns it to the "screen" property. We will work with this property later.s
-        self.screen = pygame.display.set_mode((1200, 800))
+        # Sets the display window to 1200x800 pixel
+        # Also Returns a "Surface Object" with 1200x800 dimensions and assigns it to the "screen" property.
+        # We will work with this property later.
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
     def run_game(self):
@@ -20,14 +24,17 @@ class AlienInvasion:
                 if event.type == pygame.QUIT:
                     sys.exit()
 
+            # Redraw the screen during each pass through the loop
+            self.screen.fill(self.settings.bg_color)
+
             # Make the most recently drawn screen visible.
             pygame.display.flip()
+
+            # Set the framerate to 60. It effectively sets a "sleep" time to compensate for fast computers. It waits if the code above in the loop executes fast.
+            self.clock.tick(60)
 
 
 if __name__ == '__main__':
     # Make a game instance and run the game.
     ai = AlienInvasion()
     ai.run_game()
-
-# TODO
-# Controlling the Frame Rate
