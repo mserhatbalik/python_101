@@ -3,6 +3,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 
+
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
 
@@ -23,20 +24,30 @@ class AlienInvasion:
     def run_game(self):
         """Start the main loop for the game."""
         while True:
-            # Watch for keyboard and mouse events
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    sys.exit()
-
-            # Redraw the screen during each pass through the loop
-            self.screen.fill(self.settings.bg_color)
-            self.ship.blitme()
-
-            # Make the most recently drawn screen visible.
-            pygame.display.flip()
-
+            self._check_events()
+            self._update_screen()
             # Set the framerate to 60. It effectively sets a "sleep" time to compensate for fast computers. It waits if the code above in the loop executes fast.
             self.clock.tick(60)
+
+    # "helper" methods are used inside classes to simplify code, they are not meant to be called outside the class.
+    # helper methods are named with "_" prefix
+    def _check_events(self):
+        # Watch for keyboard and mouse events
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.rect.x += 1
+
+
+    def _update_screen(self):
+        # Redraw the screen during each pass through the loop
+        self.screen.fill(self.settings.bg_color)
+        self.ship.blitme()
+
+        # Make the most recently drawn screen visible.
+        pygame.display.flip()
 
 
 if __name__ == '__main__':
@@ -44,6 +55,5 @@ if __name__ == '__main__':
     ai = AlienInvasion()
     ai.run_game()
 
-
 # TODO
-# Refactoring: The _check_events() and _update_screen() Methods
+# Allowing Continuous Movement
