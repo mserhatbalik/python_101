@@ -50,8 +50,8 @@ while True:
     ax.set_aspect("equal")
 
     # Emphasize start and end points
-    ax.scatter(0, 0, c="green", edgecolors="none", s=100)
-    ax.scatter(rw.x_values[-1], rw.y_values[-1], s=100, c="red", edgecolors="none")
+    ax.scatter(0, 0, c="green", edgecolors="none", s=100) # START POINT
+    ax.scatter(rw.x_values[-1], rw.y_values[-1], s=100, c="red", edgecolors="none") # END POINT
 
     plt.show()
     prompt = input("Would you like to continue? Type 'n' top stop")
