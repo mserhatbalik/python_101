@@ -45,7 +45,10 @@ while True:
 
     # Plot the walk
     plt.style.use("classic")
-    fig, ax = plt.subplots()
+
+    # Change the resolution size of the figure
+    fig, ax = plt.subplots(figsize=(40,40))
+
     ax.scatter(rw.x_values, rw.y_values, s=15, c=range(rw.num_points), cmap=plt.cm.Blues, edgecolors="none")
     ax.set_aspect("equal")
 
@@ -57,6 +60,7 @@ while True:
     ax.get_xaxis().set_visible(False)
     ax.get_yaxis().set_visible(False)
 
+    plt.savefig("myplot.png")
     plt.show()
     prompt = input("Would you like to continue? Type 'n' top stop")
     if prompt == 'n':
