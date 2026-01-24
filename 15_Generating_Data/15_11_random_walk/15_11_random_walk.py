@@ -38,13 +38,18 @@ class RandomWalk:
             self.x_values.append(x)
             self.y_values.append(y)
 
-# Make a random walk
-rw = RandomWalk(10)
-rw.fill_walk()
+while True:
+    # Make a random walk
+    rw = RandomWalk()
+    rw.fill_walk()
 
-# Plot the walk
-plt.style.use("classic")
-fig, ax = plt.subplots()
-ax.scatter(rw.x_values, rw.y_values, s=15)
-ax.set_aspect("equal")
-plt.show()
+    # Plot the walk
+    plt.style.use("classic")
+    fig, ax = plt.subplots()
+    ax.scatter(rw.x_values, rw.y_values, s=15, c=range(rw.num_points), cmap=plt.cm.Blues, edgecolors="none")
+    ax.set_aspect("equal")
+    plt.show()
+    prompt = input("Would you like to continue? Type 'n' top stop")
+    if prompt == 'n':
+        break
+
