@@ -40,7 +40,7 @@ class RandomWalk:
 
 while True:
     # Make a random walk
-    rw = RandomWalk()
+    rw = RandomWalk(50000)
     rw.fill_walk()
 
     # Plot the walk
