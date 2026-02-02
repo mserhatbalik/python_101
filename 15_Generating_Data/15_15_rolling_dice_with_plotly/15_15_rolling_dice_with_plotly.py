@@ -1,4 +1,5 @@
 from random import randint
+import plotly.express as px
 
 class Die:
     """A class representing a single die."""
@@ -33,6 +34,10 @@ for value in poss_results:
 
     # Append the occurance of each side to the frequencies list.
     frequencies.append(frequency)
+
+# Visualize the results using Plotly
+fig = px.bar(x=poss_results, y=frequencies)
+fig.show()
 
 # The results format is [151, 168, 167, 172, 180] as an example. 151 is how many 1s are in the results list, 168 is how many 2s are in the results list, etc.
 print(frequencies)
