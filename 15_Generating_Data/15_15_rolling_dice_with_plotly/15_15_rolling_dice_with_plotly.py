@@ -41,5 +41,12 @@ labels = {"x" : "Side", "y" : "Frequency of Side"}
 fig = px.line(x=poss_results, y=frequencies, title=title, labels=labels)
 fig.show()
 
+# Making a histogram
+# title = "Results of Rolling one D6 1,000 Times"
+# labels = {"x" : "Side", "y" : "Frequency of Side"}
+# fig = px.bar(x=poss_results, y=frequencies, title=title, labels=labels)
+# fig.show()
+
+
 # The results format is [151, 168, 167, 172, 180] as an example. 151 is how many 1s are in the results list, 168 is how many 2s are in the results list, etc.
 print(frequencies)
